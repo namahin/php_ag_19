@@ -9,7 +9,7 @@
                                           class="link-success link-underline-opacity-0">{{$post->title}}</a></h2>
                 <p class="card-text"><small class="text-body-secondary"><a
                             class="link-success link-underline-opacity-0" href="#">{{ $post->user->name }}</a> · {{ $post->created_at->format('F d, Y') }}</small></p>
-                <p class="card-text">{{ Str::limit($post->content, 550) }}</p>
+                <p class="card-text">{{ Str::limit(strip_tags($post->content), 550) }}</p>
             </div>
         </div>
     </div>
