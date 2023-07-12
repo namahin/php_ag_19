@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('social_accounts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('icon');
+            $table->string('icon',10000);
             $table->string('slug');
 
             $table->timestamp('created_at')->useCurrent();

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\Social;
 use Illuminate\Support\Facades\Route;
 
 /*

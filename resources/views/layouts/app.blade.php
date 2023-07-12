@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expart Blog</title>
+    <title>{{$siteIdentity->title}} | {{$siteIdentity->tegLine}}</title>
     <meta name="description" content="Expart Blog is a platform for sharing insights and opinions on various topics related to business, technology, education, and more. Our goal is to provide valuable and engaging content for our readers, as well as to showcase the expertise and experience of our contributors. " />
     <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
     <link rel="canonical" href="https://ExpartBlog.com/" />
@@ -13,8 +13,9 @@
     <meta property="og:title" content="Expart Blog - Photo Editing and Clipping Path Service Provider" />
     <meta property="og:description" content="Expart Blog is a platform for sharing insights and opinions on various topics related to business, technology, education, and more. Our goal is to provide valuable and engaging content for our readers, as well as to showcase the expertise and experience of our contributors. " />
     <meta property="og:url" content="https://ExpartBlog.com/" />
-    <meta property="og:site_name" content="Expart Blog" />
-    <meta property="og:updated_time" content="2023-07-10T14:50:32+06:00" />
+    <meta property="og:image" content="{{ asset($siteIdentity->ogImage) }}">
+    <meta property="og:site_name" content="{{$siteIdentity->title}}" />
+    <meta property="og:updated_time" content="{{$siteIdentity->created_at}}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Expart Blog - Photo Editing and Clipping Path Service Provider" />
     <meta name="twitter:description" content="Expart Blog is a platform for sharing insights and opinions on various topics related to business, technology, education, and more. Our goal is to provide valuable and engaging content for our readers, as well as to showcase the expertise and experience of our contributors. " />

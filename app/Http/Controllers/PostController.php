@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function Posts(){
-        $posts = Post::all();
-        return view('pages.home',compact('posts'));
+        $posts = Post::orderBy('id', 'desc')->paginate(2);
+        return view('pages.home', compact('posts'));
     }
 
     public  function SinglePost($slug){
@@ -17,4 +17,5 @@ class PostController extends Controller
 //        return response()->json($post);
         return view('pages.single-blog',compact('post'));
     }
+
 }

@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\SiteIdentity;
 use Illuminate\Support\ServiceProvider;
+use App\Models\SocialAccount;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +22,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        View::composer('*', function ($view) {
+            $socialLinks = SocialAccount::all();
+            $siteIdentity = SiteIdentity::first();
+            $view->with('socialLinks', $socialLinks);
+            $view->with('siteIdentity', $siteIdentity);
+        });
     }
+
 }
